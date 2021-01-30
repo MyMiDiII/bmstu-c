@@ -1,0 +1,2 @@
+action ./func_tests/neg_02/neg_02_matrix1.txt
+ ./func_tests/neg_02/neg_02_matrix2.txt ./func_tests/neg_02/neg_02_res.txt

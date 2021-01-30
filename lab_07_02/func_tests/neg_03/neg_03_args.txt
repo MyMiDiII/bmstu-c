@@ -1,0 +1,1 @@
+./func_tests/neg_03/test.txt ./func_tests/neg_03/neg_03_res.txt

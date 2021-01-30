@@ -1,0 +1,6 @@
+1) Input: 3661
+Output: 1 1 1
+2) Input: 256
+Output: 0 4 16
+3) Input: 54
+Output: 0 0 54

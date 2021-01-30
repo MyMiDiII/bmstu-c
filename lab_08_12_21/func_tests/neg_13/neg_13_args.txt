@@ -1,0 +1,1 @@
+o ./func_tests/neg_13/neg_13_in.txt ./func_tests/neg_13/neg_13_res.txt

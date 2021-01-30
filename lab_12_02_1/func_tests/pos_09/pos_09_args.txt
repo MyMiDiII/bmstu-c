@@ -1,0 +1,1 @@
+./func_tests/pos_09/pos_09_in.txt ./func_tests/pos_09/pos_09_res.txt f

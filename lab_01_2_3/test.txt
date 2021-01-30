@@ -1,0 +1,6 @@
+1) Input: 0.1 0.2 0.1
+Output: 0.04000
+2) Input: 1 2 3
+Output: 0.54545
+3) Input: 500 500 500
+Outout: 166.66667

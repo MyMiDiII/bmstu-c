@@ -1,0 +1,7 @@
+3
+milk
+40
+orange
+20
+chocolate
+30

@@ -1,0 +1,2 @@
+a ./func_tests/pos_04/pos_04_matrix1.txt
+ ./func_tests/pos_04/pos_04_matrix2.txt ./func_tests/pos_04/pos_04_res.txt

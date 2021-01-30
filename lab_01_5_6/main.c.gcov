@@ -1,0 +1,75 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:4
+        -:    1://Пересечение двух отрезков
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:#include <math.h>
+        -:    5:
+        -:    6:#define OK 0
+        -:    7:#define INPUT_ERROR 1
+        -:    8:#define LOGIC_INPUT_ERROR 2
+        -:    9:#define CROSS 1
+        -:   10:#define NOT_CROSS 0
+        -:   11:#define EPS 1e-7
+        -:   12:
+        8:   13:float skew(float xv1, float yv1, float xv2, float yv2, float xv3, float yv3)
+        -:   14:{
+        8:   15:    return (xv1 - xv2) * (yv1 - yv3) - (xv1 - xv3) * (yv1 - yv2);
+        -:   16:}
+        -:   17:
+        2:   18:int cross(float x1, float y1, float x2, float y2, float x3, float y3, float x4,
+        -:   19:float y4)
+        -:   20:{
+        -:   21:    float skew_1, skew_2, skew_3, skew_4;
+        -:   22:
+        2:   23:    skew_1 = skew(x1, y1, x2, y2, x3, y3);
+        2:   24:    skew_2 = skew(x1, y1, x2, y2, x4, y4);
+        2:   25:    skew_3 = skew(x3, y3, x4, y4, x1, y1);
+        2:   26:    skew_4 = skew(x3, y3, x4, y4, x2, y2);
+        -:   27:
+        2:   28:    if (skew_1 * skew_2 < 0 && skew_3 * skew_4 < 0)
+        -:   29:    {
+        1:   30:        return CROSS;
+        -:   31:    }
+        -:   32:    else
+        -:   33:    {
+        1:   34:        return NOT_CROSS;
+        -:   35:    }
+        -:   36:}
+        -:   37:
+        4:   38:int main(void)
+        -:   39:{
+        -:   40:    //координаты концов отрезков
+        -:   41:    float x_p1, x_p2, y_p1, y_p2;
+        -:   42:    float x_m1, x_m2, y_m1, y_m2;
+        -:   43:    int res_in_1, res_in_2;
+        -:   44:    int is_cross;
+        -:   45:
+        4:   46:    printf("Enter the coordinates of the ends of the first segment: ");
+        4:   47:    res_in_1 = scanf("%f%f%f%f", &x_p1, &y_p1, &x_p2, &y_p2);
+        -:   48:
+        4:   49:    printf("Enter the coordinates of the ends of the second segment: ");
+        4:   50:    res_in_2 = scanf("%f%f%f%f", &x_m1, &y_m1, &x_m2, &y_m2);
+        -:   51:
+        4:   52:    if (res_in_1 == 4 && res_in_2 == 4)
+        -:   53:    {
+        3:   54:        if ((fabs(x_p1 - x_p2) < EPS && fabs(y_p1 - y_p2) < EPS)
+       2*:   55:        || (fabs(x_m1 - x_m2) < EPS && fabs(y_m1 - y_m2) < EPS))
+        -:   56:        {
+        1:   57:            printf("Incorrect coordinates");
+        2:   58:            return LOGIC_INPUT_ERROR;
+        -:   59:        }
+        -:   60:        else
+        -:   61:        {
+        2:   62:            is_cross = cross(x_p1, y_p1, x_p2, y_p2, x_m1, y_m1, x_m2, y_m2);
+        2:   63:            printf("%d", is_cross);
+        -:   64:        }
+        -:   65:    }
+        -:   66:    else
+        -:   67:    {
+        1:   68:        printf("Input error");
+        1:   69:        return INPUT_ERROR;
+        -:   70:    }
+        -:   71:}

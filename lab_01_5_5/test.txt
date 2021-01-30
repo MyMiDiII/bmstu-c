@@ -1,0 +1,8 @@
+1) Input: 12345600
+Output: 12345600
+2) Input: 777
+Output: 777
+3) Input: -11
+Output: Non-natural number was entered.
+4) Input: fdsa
+Output: Input error.
