@@ -1,0 +1,58 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:3
+        -:    1://Подсчет суммы ряда с точностью eps
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:#include <math.h>
+        -:    5:
+        -:    6:#define OK 0
+        -:    7:#define INPUT_ERROR 1
+        -:    8:
+        1:    9:double sum(double arg, double prec)
+        -:   10:{
+        1:   11:    double result = 0;
+        1:   12:    double element = 1;
+        1:   13:    int current_coef = 1;
+        -:   14:
+        6:   15:    while (fabs(element) > prec)
+        -:   16:    {
+        5:   17:        result += element;
+        5:   18:        element *= arg * arg * current_coef / (current_coef + 1);
+        5:   19:        current_coef += 2;
+        -:   20:    }
+        -:   21:
+        1:   22:    return result;
+        -:   23:}
+        -:   24:
+        3:   25:int main(void)
+        -:   26:{
+        -:   27:    double x, eps;
+        -:   28:    double sum_of_series, exact;
+        -:   29:    double absolute, relative;
+        -:   30:    int res_in;
+        -:   31:
+        3:   32:    printf("Enter x and eps: ");
+        3:   33:    res_in = scanf("%lf%lf", &x, &eps);
+        -:   34:
+        3:   35:    if (res_in == 2 && fabs(x) < 1 && eps > 0 && eps < 1)
+        -:   36:    {
+        1:   37:        sum_of_series = sum(x, eps);
+        1:   38:        exact = 1 / sqrt(1 - x * x);
+        1:   39:        absolute = fabs(exact - sum_of_series);
+        1:   40:        relative = fabs(absolute / exact);
+        -:   41:
+        1:   42:        printf("Approximate value: %.6f\n", sum_of_series);
+        1:   43:        printf("Exact value: %.6f\n", exact);
+        1:   44:        printf("Absolute error: %.6f\n", absolute);
+        1:   45:        printf("Relative error: %.6f\n", relative);
+        -:   46:
+        1:   47:        return OK;
+        -:   48:    }
+        -:   49:    else
+        -:   50:    {
+        2:   51:        printf("Input error");
+        2:   52:        return INPUT_ERROR;
+        -:   53:    }
+        -:   54:}

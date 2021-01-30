@@ -1,0 +1,1 @@
+func_tests/neg_06/neg_06_in.txt func_tests/neg_06/neg_06_res1.txt func_tests/neg_06/neg_06_res2.txt

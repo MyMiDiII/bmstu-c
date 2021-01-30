@@ -1,0 +1,3 @@
+m ./func_tests/neg_18/neg_18_matrix1.txt
+ ./func_tests/neg_18/neg_18_matrix2.txt
+ ./func_tests/neg_18/neg_18_res.txt

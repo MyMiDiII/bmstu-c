@@ -1,0 +1,1 @@
+func_tests/neg_04/neg_04_in.txt 4

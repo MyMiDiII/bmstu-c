@@ -1,0 +1,2 @@
+o ./func_tests/neg_03/neg_03_matrix1.txt
+ ./func_tests/neg_03/neg_03_matrix2.txt ./func_tests/neg_03/neg_03_res.txt

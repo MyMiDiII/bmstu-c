@@ -1,0 +1,6 @@
+1) Input: 0.5 0.001
+Output: 1.154388 1.154701 0.000312 0.000270
+2) Input: 1 0.1
+Output: Input error
+3) Input: j i
+Output: Input error

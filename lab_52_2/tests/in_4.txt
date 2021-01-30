@@ -1,0 +1,5 @@
+./main.exe ab out_4.bin
+lemon
+house
+7
+10

@@ -1,0 +1,69 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:4
+        -:    1://Вывод числа по цифрам
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:
+        -:    5:#define OK 0
+        -:    6:#define INPUT_ERROR 1
+        -:    7:#define NOT_NATURAL 2
+        -:    8:#define NUM_BASE 10
+        -:    9:
+        3:   10:int out_number(int num)
+        -:   11:{
+        3:   12:    if (num > 0)
+        -:   13:    {
+        2:   14:        int max_digit_place = 1;
+        2:   15:        long long int div_num = NUM_BASE;
+        -:   16:        int i;
+        -:   17:
+        -:   18:        //поиск количества цифр в числе
+       11:   19:        while (num > div_num)
+        -:   20:        {
+        9:   21:            max_digit_place += 1;
+        9:   22:            div_num *= NUM_BASE;
+        -:   23:        }
+        2:   24:        div_num /= NUM_BASE;
+        -:   25:
+        -:   26:        //вывод
+       13:   27:        while (max_digit_place > 0)
+        -:   28:        {
+       11:   29:            i = num / div_num;
+       11:   30:            printf("%d", i);
+       11:   31:            num = num % div_num;
+       11:   32:            div_num /= NUM_BASE;
+       11:   33:            max_digit_place -= 1;
+        -:   34:        }
+        -:   35:		
+        2:   36:        return OK;
+        -:   37:    }
+        -:   38:    else
+        -:   39:    {
+        1:   40:        printf("Non-natural number was entered.");
+        1:   41:        return NOT_NATURAL;
+        -:   42:    }
+        -:   43:}
+        -:   44:
+        4:   45:int main(void)
+        -:   46:{
+        -:   47:    int number;
+        -:   48:    int res_in;
+        -:   49:    int exit_code;
+        -:   50:
+        4:   51:    printf("Input a natural number: ");
+        4:   52:    res_in = scanf("%d", &number);
+        -:   53:
+        4:   54:    if (res_in == 1)
+        -:   55:    {
+        3:   56:        exit_code = out_number(number);
+        -:   57:    }
+        -:   58:    else
+        -:   59:    {
+        1:   60:        printf("Input error.");
+        1:   61:        exit_code = INPUT_ERROR;
+        -:   62:    }
+        -:   63:	
+        4:   64:    return exit_code;
+        -:   65:}

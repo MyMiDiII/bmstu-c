@@ -1,0 +1,1 @@
+./main.exe fb out_1.bin on

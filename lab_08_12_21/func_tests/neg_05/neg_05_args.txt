@@ -1,0 +1,1 @@
+m ./func_tests/neg_05/neg_05_matrix1.txt ./func_tests/neg_05/neg_05_res.txt

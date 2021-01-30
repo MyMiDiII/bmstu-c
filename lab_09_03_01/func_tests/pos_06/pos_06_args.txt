@@ -1,0 +1,1 @@
+func_tests/pos_06/pos_06_in.txt 4
